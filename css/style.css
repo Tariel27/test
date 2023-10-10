@@ -1,0 +1,201 @@
+@font-face {
+  font-family: 'Benzin';
+  src: local('Benzin Extra Bold'), local('Benzin-Extra-Bold'),
+      url('../fonts/Benzin/Benzin-ExtraBold.woff2') format('woff2'),
+      url('../fonts/Benzin/Benzin-ExtraBold.woff') format('woff'),
+      url('../fonts/Benzin/Benzin-ExtraBold.ttf') format('truetype');
+  font-weight: 800;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Montserrat';
+  src:
+      url('../fonts/Montserrat/Montserrat-VariableFont_wght.ttf') format('truetype');
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Montserrat', sans-serif;
+}
+
+a {
+  text-decoration: none;
+}
+
+.main-bg {
+  background-image: url(../images/bg/main-bg.png);
+}
+
+.horse-bg {
+  background-image: url(../images/bg/horse.png);
+  background-position: right top;
+  background-repeat: no-repeat;
+}
+
+.money-bg {
+  background-image: url(../images/Money.png);
+}
+
+.paper-bg {
+  background-image: url(../images/papers.png);
+  background-position: top center;
+  background-repeat: no-repeat;
+}
+
+.car-bg {
+  background-image: url(../images/car.png);
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.f-sm-block {
+  background-image: url(../images/Subtract.png);
+  background-repeat: no-repeat;
+}
+
+.s-sm-block {
+  background-image: url(../images/Subtract1.png);
+  background-repeat: no-repeat;
+}
+
+.t-sm-block {
+  background-image: url(../images/Subtract2.png);
+  background-repeat: no-repeat;
+}
+
+.carousel-indicators [data-bs-target] {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background-color: rgba(0, 0, 0, 0);
+}
+
+.carousel-indicators [data-bs-target] {
+  border: 2px #159FBD solid;
+}
+
+.carousel-indicators .active {
+  background-color: #159FBD;
+}
+
+.main-block a[data-i18n="Company name"] {
+  font-family: 'Benzin', sans-serif;
+  font-size: 15px;
+}
+
+.main-block li a, .main-block span {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 13px;
+}
+
+.main-block span[data-i18n="Call me back"] {
+  font-size: 11px;
+}
+
+.desc-block h2 {
+  font-family: 'Benzin', sans-serif;
+  line-height: 52.6px;
+}
+
+.desc-block p {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 23px;
+  font-weight: 500;
+  line-height: 28.38px;
+}
+
+.nav-block {
+  font-size: 13px;
+  text-decoration: none;
+}
+
+.green-button {
+  border-color: #117fa1 !important;
+  background-color: #159fbd;
+  color: #ffffff;
+}
+
+.blue-button {
+  border-color: #2663ff !important;
+  border-style: dashed !important;
+  color: #2663ff;
+}
+
+.odd-block {
+  background: #FF7020;
+}
+/* 
+.calc-block h3 {
+  font-size: 55px;
+}
+
+.calc-block .price {
+  font-size: 55px;
+} */
+.cfs-3-5vw {
+  font-size: calc(1.375rem + 2.6vw)!important;
+}
+.cfs-90 {
+  font-size: 90px !important;
+}
+
+.cfs-55 {
+  font-size: 55px !important;
+}
+
+.cfs-15 {
+  font-size: 15px !important;
+}
+
+.cfs-13 {
+  font-size: 13px !important;
+}
+
+.cfs-12 {
+  font-size: 12px !important;
+  line-height: 13.61px;
+}
+
+.mx-width100 {
+  max-width: 100%;
+}
+
+.mx-width50 {
+  max-width: 50%;
+}
+
+.cbg-grey {
+  background-color: #E1E1E1;
+}
+
+#map {
+  max-width: 1180px;
+  width: 100%;
+  height: 752px;
+}
+
+.accordion-button::after {
+  transition: transform .3s ease-in-out;
+  background-image: url(../images/plus.png);
+}
+
+.accordion-button:not(.collapsed)::after {
+  background-image: url(../images/x.png);
+}
+
+.accordion-button {
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.accordion-button:not(.collapsed) {
+  color: black;
+  background-color: #D9D9D9;
+}
+
+.akka-bg {
+  background-color: #D9D9D9;
+}
