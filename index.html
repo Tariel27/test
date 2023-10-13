@@ -69,13 +69,13 @@
                             data-i18n="Promotional loan without car repossession <b>at 11.9%</b> of 50 thousand soms for a period of 30 days">
                         </p>
                     </div>
-                    <div class="my-4 row cfs-13 text-center justify-content-between m-0 px-0">
-                        <a href="#"
-                            class="i18nelement col-12 col-lg-5 border border-3 rounded-pill py-1 my-1 green-button"
-                            data-i18n="Get money"></a>
-                        <a href="#"
-                            class="i18nelement col-12 col-lg-5 border border-3 rounded-pill py-1 my-1 blue-button"
-                            data-i18n="Submit your application"></a>
+                    <div class="my-4 row cfs-13 text-center justify-content-start m-0 px-0 w-75">
+                        <button
+                            class="i18nelement col-12 col-lg-5 border border-3 me-lg-2 rounded-pill py-1 my-1 green-button"
+                            data-i18n="Get money" data-bs-toggle="modal" data-bs-target="#myModal"></button>
+                        <button
+                            class="i18nelement col-12 col-lg-5 border border-3 ms-lg-2 rounded-pill py-1 my-1 blue-button"
+                            data-i18n="Submit your application" data-bs-toggle="modal" data-bs-target="#myModal"></button>
                     </div>
                 </div>
                 <div class="col">
@@ -97,10 +97,10 @@
                             <label for="customRange" class="form-label i18nelement fw-bold fs-5"
                                 data-i18n="Select amount"></label>
                             <div class="position-relative pb-3 cfs-15">
-                                <input type="range" class="form-range" id="customRange" min="0" max="400000"
-                                    value="300000" step="10000">
+                                <input type="range" class="form-range" id="customRange" min="0" max="500000"
+                                    value="300000" step="5000">
                                 <span class="position-absolute bottom-0 start-0">0</span>
-                                <span class="position-absolute bottom-0 end-0">400,000</span>
+                                <span class="position-absolute bottom-0 end-0">500,000</span>
                             </div>
                         </div>
                         <div class="py-3 row m-0 align-items-end">
@@ -119,12 +119,12 @@
                                     data-i18n="Your bid"></span>
                                 <span class="cfs-90" id="bid">11,9%</span>
                             </div>
-                            <div class="my-4 row cfs-13 text-center justify-content-between m-0 px-0">
+                            <div class="my-4 row cfs-13 text-center justify-content-start m-0 px-0">
                                 <button
-                                    class="i18nelement btn col-12 col-lg-5 border border-3 rounded-pill py-1 my-1 green-button"
+                                    class="i18nelement btn col-12 col-lg-5 me-lg-2 border border-3 rounded-pill py-1 my-1 green-button"
                                     data-i18n="Without withdrawal" onclick="setWithoutDrawal()"></button>
                                 <button
-                                    class="i18nelement btn col-12 col-lg-5 border border-3 rounded-pill py-1 my-1 green-button"
+                                    class="i18nelement btn col-12 col-lg-5 ms-lg-2 border border-3 rounded-pill py-1 my-1 green-button"
                                     data-i18n="With withdrawal" onclick="setWithDrawal()"></button>
                             </div>
                         </div>
@@ -134,7 +134,7 @@
         </div>
     </div>
 
-    <div class="block notification-block main-bg">
+    <div class="block notification-block main-bg" id="notification-block">
         <div class="container">
             <div class="row justify-content-center py-5">
                 <div class="col-12 col-lg-6 fw-bold">
@@ -145,8 +145,13 @@
                     </div>
                     <div class="py-2">
                         <label for="phone" class="i18nelement form-label" data-i18n="Enter your contact number"></label>
-                        <input class="form-control cbg-grey border border-dark border-3 rounded-pill" type="tel"
-                            id="phone" placeholder="+996 __ __ __">
+                        <div class="input-group">
+                            <span
+                                class="input-group-text border-3 border border-dark border-end-0 rounded-pill rounded-end">+996</span>
+                            <input
+                                class="form-control cbg-grey border border-dark border-3 border-start-0 rounded-start rounded-pill"
+                                type="tel" id="phone" placeholder="__ __ __">
+                        </div>
                     </div>
                     <div class="py-2 small fw-lighter">
                         <input class="form-check-input bg-info" type="checkbox" id="checkData">
@@ -169,8 +174,8 @@
                                     data-i18n="Submit your application now and get paid today!"></div>
                             </div>
                             <div class="py-3">
-                                <button class="green-button i18nelement border border-3 rounded-pill px-3 py-1"
-                                    data-i18n="Call me back"></button>
+                                <button class="button green-button i18nelement border border-3 rounded-pill px-3 py-1"
+                                    data-i18n="Call me back" onclick="callMe()"></button>
                             </div>
                         </div>
                     </div>
@@ -346,10 +351,50 @@
                             </div>
                             <div class="row row-cols-1 row-cols-lg-2 justify-content-center align-items-center">
                                 <div class="col">
-                                    <img class="img-fluid w-100" src="./images/car2.png" alt="">
+                                    <img class="img-fluid w-100 h-100" src="./images/car-carusel-1.png" style="max-height: 500px;" alt="...">
                                 </div>
                                 <div class="col">
-                                    <div class="i18nelement fs-2 fw-bold w-50" data-i18n="Toyota Camry 2000"></div>
+                                    <div class="fs-2 fw-bold w-50">Toyota Camry VIII (XV70)</div>
+                                    <div class="py-2">
+                                        <div class="i18nelement fs-5 fw-bold"
+                                            data-i18n="Given: 500 thousand soms without withdrawal"></div>
+                                        <div class="i18nelement fs-5 fw-bold"
+                                            data-i18n="Loan cost per month: 46,625 som"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <div class="py-5">
+                            <div class="i18nelement fs-1 text-center fw-bold" data-i18n="Examples of issued loans">
+                            </div>
+                            <div class="row row-cols-1 row-cols-lg-2 justify-content-center align-items-center">
+                                <div class="col">
+                                    <img class="img-fluid w-100 h-100" src="./images/car-carusel-2.png" style="max-height: 500px;" alt="">
+                                </div>
+                                <div class="col">
+                                    <div class="fs-2 fw-bold w-50">Kia k5</div>
+                                    <div class="py-2">
+                                        <div class="i18nelement fs-5 fw-bold"
+                                            data-i18n="Given: 470 thousand soms without withdrawal"></div>
+                                        <div class="i18nelement fs-5 fw-bold"
+                                            data-i18n="Loan cost per month: 43,827 som"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <div class="py-5">
+                            <div class="i18nelement fs-1 text-center fw-bold" data-i18n="Examples of issued loans">
+                            </div>
+                            <div class="row row-cols-1 row-cols-lg-2 justify-content-center align-items-center">
+                                <div class="col">
+                                    <img class="img-fluid w-100" src="./images/car-carusel-3.png" alt="">
+                                </div>
+                                <div class="col">
+                                    <div class="fs-2 fw-bold w-50 text-uppercase">honda civic 2006</div>
                                     <div class="py-2">
                                         <div class="i18nelement fs-5 fw-bold"
                                             data-i18n="Given: 500 thousand soms without withdrawal"></div>
@@ -366,10 +411,10 @@
                             </div>
                             <div class="row row-cols-1 row-cols-lg-2 justify-content-center align-items-center">
                                 <div class="col">
-                                    <img class="img-fluid w-100" src="./images/car3_.png" alt="">
+                                    <img class="img-fluid w-100" src="./images/car-carusel-4.png" alt="">
                                 </div>
                                 <div class="col">
-                                    <div class="i18nelement fs-2 fw-bold w-50" data-i18n="Toyota Camry 2000"></div>
+                                    <div class="fs-2 fw-bold w-50 text-uppercase">bmw x5</div>
                                     <div class="py-2">
                                         <div class="i18nelement fs-5 fw-bold"
                                             data-i18n="Given: 500 thousand soms without withdrawal"></div>
@@ -386,50 +431,10 @@
                             </div>
                             <div class="row row-cols-1 row-cols-lg-2 justify-content-center align-items-center">
                                 <div class="col">
-                                    <img class="img-fluid w-100" src="./images/car4_.png" alt="">
+                                    <img class="img-fluid w-100" src="./images/car-carusel-5.png" alt="">
                                 </div>
                                 <div class="col">
-                                    <div class="i18nelement fs-2 fw-bold w-50" data-i18n="Toyota Camry 2000"></div>
-                                    <div class="py-2">
-                                        <div class="i18nelement fs-5 fw-bold"
-                                            data-i18n="Given: 500 thousand soms without withdrawal"></div>
-                                        <div class="i18nelement fs-5 fw-bold"
-                                            data-i18n="Loan cost per month: 50,645 som"></div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="carousel-item">
-                        <div class="py-5">
-                            <div class="i18nelement fs-1 text-center fw-bold" data-i18n="Examples of issued loans">
-                            </div>
-                            <div class="row row-cols-1 row-cols-lg-2 justify-content-center align-items-center">
-                                <div class="col">
-                                    <img class="img-fluid w-100" src="./images/car4_3.png" alt="">
-                                </div>
-                                <div class="col">
-                                    <div class="i18nelement fs-2 fw-bold w-50" data-i18n="Toyota Camry 2000"></div>
-                                    <div class="py-2">
-                                        <div class="i18nelement fs-5 fw-bold"
-                                            data-i18n="Given: 500 thousand soms without withdrawal"></div>
-                                        <div class="i18nelement fs-5 fw-bold"
-                                            data-i18n="Loan cost per month: 50,645 som"></div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="carousel-item">
-                        <div class="py-5">
-                            <div class="i18nelement fs-1 text-center fw-bold" data-i18n="Examples of issued loans">
-                            </div>
-                            <div class="row row-cols-1 row-cols-lg-2 justify-content-center align-items-center">
-                                <div class="col">
-                                    <img class="img-fluid w-100" src="./images/car6_.png" alt="">
-                                </div>
-                                <div class="col">
-                                    <div class="i18nelement fs-2 fw-bold w-50" data-i18n="Toyota Camry 2000"></div>
+                                    <div class="fs-2 fw-bold w-50">Audi A8</div>
                                     <div class="py-2">
                                         <div class="i18nelement fs-5 fw-bold"
                                             data-i18n="Given: 500 thousand soms without withdrawal"></div>
@@ -453,10 +458,12 @@
         <div class="container py-5">
             <div class="text-center">
                 <div class="i18nelement fs-1 fw-bold py-2" data-i18n="Money for a car in Bishkek"></div>
-                <button class="green-button i18nelement border border-3 rounded-pill px-3 py-1"
-                    data-i18n="Get money"></button>
+                <button class="green-button i18nelement border border-3 rounded-pill px-3 py-1" data-i18n="Get money"
+                    href="#notification-block" data-bs-toggle="modal" data-bs-target="#myModal"></button>
                 <div class="pt-5">
-                    <iframe id="map" src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d576.0352227528862!2d74.56886297899604!3d42.871323971756674!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x389ec9e211b42055%3A0x3378d879ce55e669!2z0JDQudGC0YPRgCDQkdC40LfQvdC10Lcg0JHQvtGA0LHQvtGA0YM!5e0!3m2!1sru!2skg!4v1697044815972!5m2!1sru!2skg" style="border:0;" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    <iframe id="map"
+                        src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d576.0352227528862!2d74.56886297899604!3d42.871323971756674!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x389ec9e211b42055%3A0x3378d879ce55e669!2z0JDQudGC0YPRgCDQkdC40LfQvdC10Lcg0JHQvtGA0LHQvtGA0YM!5e0!3m2!1sru!2skg!4v1697044815972!5m2!1sru!2skg"
+                        style="border:0;" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
                 </div>
             </div>
         </div>
@@ -495,6 +502,7 @@
                         <div class="fs-6 fw-normal">
                             <div>+996 502 308 333</div>
                             <div>+996 555 308 333</div>
+                            <div>tulpar-car@mail.ru</div>
                         </div>
                     </div>
                     <div class="col-lg-2 col-12">
@@ -526,6 +534,47 @@
                     <div class="py-1">
                         <div class="i18nelement" data-i18n="License number"></div>
                         <div class="i18nelement" data-i18n="0060 dated August 30, 2023"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal" tabindex="-1" id="myModal">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content" style="border-radius: 2rem;">
+                <div class="modal-header">
+                    <h5 class="modal-title i18nelement text-center w-100 fw-bold" data-i18n="modal-title">Modal title
+                    </h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="row justify-content-center">
+                        <div class="col-12 col-lg-10">
+                            <div class="py-2">
+                                <label for="name1" class="i18nelement form-label"
+                                    data-i18n="How will they contact you?"></label>
+                                <input class="form-control cbg-grey border border-dark border-3 rounded-pill"
+                                    type="text" id="name1" placeholder="Асан Усон Усонович">
+                            </div>
+                            <div class="py-2">
+                                <label for="phone1" class="i18nelement form-label"
+                                    data-i18n="Enter your contact number"></label>
+                                <div class="input-group">
+                                    <span
+                                        class="input-group-text border-3 border border-dark border-end-0 rounded-pill rounded-end">+996</span>
+                                    <input
+                                        class="form-control cbg-grey border border-dark border-3 border-start-0 rounded-start rounded-pill"
+                                        type="tel" id="phone1" placeholder="__ __ __">
+                                </div>
+                            </div>
+                            <div class="py-2 small fw-lighter">
+                                <input class="form-check-input bg-info" type="checkbox" id="checkData1">
+                                <label for="checkData1" class="i18nelement form-label fw-normal"
+                                    data-i18n="I agree to the processing of personal data"></label>
+                            </div>
+                        </div>
+                        <button type="button" class="btn btn-secondary col-12 col-lg-10 border border-3 rounded-pill py-2">Close</button>
                     </div>
                 </div>
             </div>

@@ -33,6 +33,7 @@ a {
   background-image: url(../images/bg/horse.png);
   background-position: right top;
   background-repeat: no-repeat;
+  background-size: contain;
 }
 
 .money-bg {
@@ -97,7 +98,7 @@ a {
 
 .desc-block h2 {
   font-family: 'Benzin', sans-serif;
-  line-height: 52.6px;
+  line-height: 58.6px;
 }
 
 .desc-block p {
@@ -198,4 +199,8 @@ a {
 
 .akka-bg {
   background-color: #D9D9D9;
+}
+
+.modal {
+  background-color: rgba(255,112,32,0.5);
 }

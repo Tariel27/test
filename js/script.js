@@ -49,3 +49,58 @@ function setWithoutDrawal() {
 
 setWithoutDrawal()
 setLoanAmount()
+
+//=====
+const phoneInput1 = document.getElementById("phone1");
+const nameInput1 = document.getElementById("name1");
+
+phoneInput1.addEventListener("input", function (event) {
+    event.preventDefault();
+    console.log("change")
+    let value = phoneInput1.value;
+    let sizes = [3, 6, 9]
+    for (let i = 0; i <= 9; i++) {
+        if (value.length == sizes[i]) {
+            value = value + "-";
+        }
+    }
+    if (value.length > 12) {
+        phoneInput1.value = value.substring(0, 12);    
+    } else {
+        phoneInput1.value = value;
+    }
+});
+
+const phoneInput = document.getElementById("phone");
+const nameInput = document.getElementById("name");
+
+phoneInput.addEventListener("input", function (event) {
+    event.preventDefault();
+    console.log("change")
+    let value = phoneInput.value;
+    let sizes = [3, 6, 9]
+    for (let i = 0; i <= 9; i++) {
+        if (value.length == sizes[i]) {
+            value = value + "-";
+        }
+    }
+    if (value.length > 12) {
+        phoneInput.value = value.substring(0, 12);    
+    } else {
+        phoneInput.value = value;
+    }
+});
+
+//=====
+
+function callMe() {
+    if (isEmpty(nameInput.value) || isEmpty(phoneInput.value)) {
+        document.getElementById("notification-block").scrollIntoView();
+    } else {
+
+    }
+}
+
+function isEmpty(str) {
+    return (!str || str.length === 0 );
+}
