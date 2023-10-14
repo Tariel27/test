@@ -54,6 +54,20 @@ setLoanAmount();
 //=====
 const phoneInput1 = document.getElementById("phone1");
 const nameInput1 = document.getElementById("name1");
+const checkBox1 = document.getElementById("checkData1");
+const submitButton = document.getElementById("submit-button");
+
+checkBox1.addEventListener("click", function (event) {
+  if (checkBox1.checked) {
+    submitButton.classList.remove("btn-secondary")
+    submitButton.classList.add("btn-primary")
+    submitButton.removeAttribute("disabled");
+  } else {
+    submitButton.classList.remove("btn-primary");
+    submitButton.classList.add("btn-secondary");
+    submitButton.setAttribute("disabled", null);
+  }
+})
 
 phoneInput1.addEventListener("input", function (event) {
   event.preventDefault();
@@ -103,14 +117,4 @@ function callMe() {
 
 function isEmpty(str) {
   return !str || str.length === 0;
-}
-
-function sendMail() {
-  Email.send({
-    SecureToken: "423227b5-269d-4e36-9f59-8df9bb5ebf31",
-    To: "tulpar-car@mail.ru",
-    From: "tulpar-car@mail.ru",
-    Subject: "This is the subject",
-    Body: "And this is the body",
-  }).then((message) => alert(message));
 }
