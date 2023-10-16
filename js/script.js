@@ -1,1 +1,158 @@
-let range=document.getElementById("customRange"),loanAmount=document.getElementById("loanAmount"),generalAmount=document.getElementById("generalAmount"),bid=document.getElementById("bid");const withDrawal=5,withoutDrawal=12.5,mounts=12,currencyFormat=new Intl.NumberFormat("kg-KG");function setLoanAmount(){loanAmount.value=range.value,loanAmount.innerHTML=currencyFormat.format(range.value)+"c"}function setGeneralAmount(){generalAmount.innerHTML=currencyFormat.format(Math.floor(subtract(range.value)))+"c"}function subtract(t){let e=t/12;return e+percentage(e,bid.value)}function percentage(t,e){return e/100*t}function changeBid(t){bid.value=t,bid.innerHTML=t+"%",setGeneralAmount()}function setWithDrawal(){changeBid(6)}function setWithoutDrawal(){changeBid(12.5)}range.addEventListener("input",t=>{t.preventDefault(),setLoanAmount(),setGeneralAmount()}),setWithoutDrawal(),setLoanAmount();const phoneInput1=document.getElementById("phone1"),nameInput1=document.getElementById("name1"),checkBox1=document.getElementById("checkData1"),submitButton=document.getElementById("submit-button");checkBox1.addEventListener("click",function(t){checkBox1.checked?(submitButton.classList.remove("btn-secondary"),submitButton.classList.add("btn-primary"),submitButton.removeAttribute("disabled")):(submitButton.classList.remove("btn-primary"),submitButton.classList.add("btn-secondary"),submitButton.setAttribute("disabled",null))}),phoneInput1.addEventListener("input",function(t){t.preventDefault();let e=phoneInput1.value,n=[3,6,9];for(let u=0;u<=9;u++)e.length==n[u]&&(e+="-");e.length>12?phoneInput1.value=e.substring(0,12):phoneInput1.value=e});const phoneInput=document.getElementById("phone"),nameInput=document.getElementById("name");phoneInput.addEventListener("input",function(t){t.preventDefault();let e=phoneInput.value,n=[3,6,9];for(let u=0;u<=9;u++)e.length==n[u]&&(e+="-");e.length>12?phoneInput.value=e.substring(0,12):phoneInput.value=e});const form1=document.getElementById("notification-form");form1.addEventListener("submit",function(t){t.preventDefault(),isEmpty(nameInput.value)||isEmpty(phoneInput.value)?document.getElementById("notification-block").scrollIntoView():sendMail(nameInput.value,phoneInput.value)});const form2=document.getElementById("notification-form2");function isEmpty(t){return!t||0===t.length}function sendMail(t,e){let n=`<div><div>ФИО: ${t}</div><div>Номер: ${e}</div></div>`;Email.send({SecureToken:"3200ec58-ed40-4e87-ab21-e3f9c86b8abb",To:"tulpar-car@mail.ru",From:"tulpar.car1516@gmail.com",Subject:"Заявка на перезвон",Body:n}).then(()=>window.location.reload())}form2.addEventListener("submit",function(t){t.preventDefault(),isEmpty(nameInput1.value)||isEmpty(phoneInput1.value)||sendMail(nameInput1.value,phoneInput1.value)});
+let range = document.getElementById("customRange");
+
+let loanAmount = document.getElementById("loanAmount");
+let generalAmount = document.getElementById("generalAmount");
+let bid = document.getElementById("bid");
+
+const withDrawal = 6.0;
+const withoutDrawal = 12.5;
+const mounts = 12;
+
+const currencyFormat = new Intl.NumberFormat("kg-KG");
+
+range.addEventListener("input", (event) => {
+  event.preventDefault();
+  setLoanAmount();
+  setGeneralAmount();
+});
+
+function setLoanAmount() {
+  loanAmount.value = range.value;
+  loanAmount.innerHTML = currencyFormat.format(range.value) + "c";
+}
+
+function setGeneralAmount() {
+  generalAmount.innerHTML =
+    currencyFormat.format(Math.floor(subtract(range.value))) + "c";
+}
+
+function subtract(value) {
+  let a = value / mounts;
+  return a + percentage(a, bid.value);
+}
+
+function percentage(partialValue, totalValue) {
+  return (totalValue / 100) * partialValue;
+}
+
+function changeBid(newBid) {
+  bid.value = newBid;
+  bid.innerHTML = newBid + "%";
+  setGeneralAmount();
+}
+
+function setWithDrawal() {
+  changeBid(withDrawal);
+}
+function setWithoutDrawal() {
+  changeBid(withoutDrawal);
+}
+
+setWithoutDrawal();
+setLoanAmount();
+
+//=====
+const phoneInput1 = document.getElementById("phone1");
+const nameInput1 = document.getElementById("name1");
+const checkBox1 = document.getElementById("checkData1");
+const submitButton = document.getElementById("submit-button");
+
+checkBox1.addEventListener("click", function (event) {
+  if (checkBox1.checked) {
+    submitButton.classList.remove("btn-secondary");
+    submitButton.classList.add("btn-primary");
+    submitButton.removeAttribute("disabled");
+  } else {
+    submitButton.classList.remove("btn-primary");
+    submitButton.classList.add("btn-secondary");
+    submitButton.setAttribute("disabled", null);
+  }
+});
+
+phoneInput1.addEventListener("input", function (event) {
+  event.preventDefault();
+  let value = phoneInput1.value;
+  let sizes = [3, 6, 9];
+  for (let i = 0; i <= 9; i++) {
+    if (value.length == sizes[i]) {
+      value = value + "-";
+    }
+  }
+  if (value.length > 12) {
+    phoneInput1.value = value.substring(0, 12);
+  } else {
+    phoneInput1.value = value;
+  }
+});
+
+const phoneInput = document.getElementById("phone");
+const nameInput = document.getElementById("name");
+
+phoneInput.addEventListener("input", function (event) {
+  event.preventDefault();
+  let value = phoneInput.value;
+  let sizes = [3, 6, 9];
+  for (let i = 0; i <= 9; i++) {
+    if (value.length == sizes[i]) {
+      value = value + "-";
+    }
+  }
+  if (value.length > 12) {
+    phoneInput.value = value.substring(0, 12);
+  } else {
+    phoneInput.value = value;
+  }
+});
+
+//=====
+const form1 = document.getElementById("notification-form");
+form1.addEventListener("submit", function (event) {
+  event.preventDefault();
+  if (isEmpty(nameInput.value) || isEmpty(phoneInput.value)) {
+    document.getElementById("notification-block").scrollIntoView();
+  } else {
+    sendMail(nameInput.value, phoneInput.value);
+  }
+});
+
+const form2 = document.getElementById("notification-form2");
+form2.addEventListener("submit", function (event) {
+  event.preventDefault();
+  if (!isEmpty(nameInput1.value) && !isEmpty(phoneInput1.value)) {
+    sendMail(nameInput1.value, phoneInput1.value);
+  }
+});
+
+function isEmpty(str) {
+  return !str || str.length === 0;
+}
+
+function sendMail(name, phone) {
+  let body = `
+    <div>
+      <div>ФИО: ${name}</div>
+      <div>Номер: ${phone}</div>
+    </div>
+  `;
+
+  Email.send({
+    SecureToken: "3200ec58-ed40-4e87-ab21-e3f9c86b8abb",
+    To: "tulpar-car@mail.ru",
+    From: "tulpar.car1516@gmail.com",
+    Subject: "Заявка на перезвон",
+    Body: body,
+  }).then(() => window.location.reload());
+}
+
+let ruButton = document.getElementById("ruButton");
+let kgButton = document.getElementById("kgButton");
+
+ruButton.addEventListener("click", () => actived(ruButton, kgButton));
+kgButton.addEventListener("click", () => actived(kgButton, ruButton));
+
+function actived(button1, button2) {
+  if (!button1.classList.contains("btn-info")) {
+    button1.classList.add("btn-info");
+    button2.classList.remove("btn-info");
+  }
+}
