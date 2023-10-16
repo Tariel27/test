@@ -50,6 +50,7 @@ a {
   background-image: url(../images/car.png);
   background-position: center;
   background-repeat: no-repeat;
+  background-size: cover;
 }
 
 .f-sm-block {
