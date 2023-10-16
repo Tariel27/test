@@ -1,9 +1,9 @@
 @font-face {
   font-family: 'Benzin';
   src: local('Benzin Extra Bold'), local('Benzin-Extra-Bold'),
-      url('../fonts/Benzin/Benzin-ExtraBold.woff2') format('woff2'),
-      url('../fonts/Benzin/Benzin-ExtraBold.woff') format('woff'),
-      url('../fonts/Benzin/Benzin-ExtraBold.ttf') format('truetype');
+      url('/fonts/Benzin/Benzin-ExtraBold.woff2') format('woff2'),
+      url('/fonts/Benzin/Benzin-ExtraBold.woff') format('woff'),
+      url('/fonts/Benzin/Benzin-ExtraBold.ttf') format('truetype');
   font-weight: 800;
   font-style: normal;
 }
@@ -11,7 +11,7 @@
 @font-face {
   font-family: 'Montserrat';
   src:
-      url('../fonts/Montserrat/Montserrat-VariableFont_wght.ttf') format('truetype');
+      url('/fonts/Montserrat/Montserrat-VariableFont_wght.ttf') format('truetype');
 }
 
 * {
@@ -26,45 +26,45 @@ a {
 }
 
 .main-bg {
-  background-image: url(../images/bg/main-bg.png);
+  background-image: url(/images/bg/main-bg.png);
 }
 
 .horse-bg {
-  background-image: url(../images/bg/horse.png);
+  background-image: url(/images/bg/horse.png);
   background-position: right top;
   background-repeat: no-repeat;
   background-size: contain;
 }
 
 .money-bg {
-  background-image: url(../images/Money.png);
+  background-image: url(/images/Money.png);
 }
 
 .paper-bg {
-  background-image: url(../images/papers.png);
+  background-image: url(/images/papers.png);
   background-position: top center;
   background-repeat: no-repeat;
 }
 
 .car-bg {
-  background-image: url(../images/car.png);
+  background-image: url(/images/car.png);
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
 }
 
 .f-sm-block {
-  background-image: url(../images/Subtract.png);
+  background-image: url(/images/Subtract.png);
   background-repeat: no-repeat;
 }
 
 .s-sm-block {
-  background-image: url(../images/Subtract1.png);
+  background-image: url(/images/Subtract1.png);
   background-repeat: no-repeat;
 }
 
 .t-sm-block {
-  background-image: url(../images/Subtract2.png);
+  background-image: url(/images/Subtract2.png);
   background-repeat: no-repeat;
 }
 
@@ -181,11 +181,11 @@ a {
 
 .accordion-button::after {
   transition: transform .3s ease-in-out;
-  background-image: url(../images/plus.png);
+  background-image: url(/images/plus.png);
 }
 
 .accordion-button:not(.collapsed)::after {
-  background-image: url(../images/x.png);
+  background-image: url(/images/x.png);
 }
 
 .accordion-button {
