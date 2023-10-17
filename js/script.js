@@ -6,7 +6,6 @@ let bid = document.getElementById("bid");
 
 const withDrawal = 6.0;
 const withoutDrawal = 12.5;
-const mounts = 12;
 
 const currencyFormat = new Intl.NumberFormat("kg-KG");
 
@@ -27,12 +26,8 @@ function setGeneralAmount() {
 }
 
 function subtract(value) {
-  let a = value / mounts;
-  return a + percentage(a, bid.value);
-}
-
-function percentage(partialValue, totalValue) {
-  return (totalValue / 100) * partialValue;
+  let a = parseInt((value / 100) * bid.value)
+  return a;
 }
 
 function changeBid(newBid) {
