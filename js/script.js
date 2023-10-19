@@ -1,11 +1,11 @@
+// Тут можно менять процентную ставку
+const withDrawal = 6.0; // с изъятием
+const withoutDrawal = 12.5; // без изъятием
+// ==================================
 let range = document.getElementById("customRange");
-
 let loanAmount = document.getElementById("loanAmount");
 let generalAmount = document.getElementById("generalAmount");
 let bid = document.getElementById("bid");
-
-const withDrawal = 6.0;
-const withoutDrawal = 12.5;
 
 const currencyFormat = new Intl.NumberFormat("kg-KG");
 
@@ -26,7 +26,7 @@ function setGeneralAmount() {
 }
 
 function subtract(value) {
-  let a = parseInt((value / 100) * bid.value)
+  let a = parseInt((value / 100) * bid.value);
   return a;
 }
 
@@ -150,4 +150,14 @@ function actived(button1, button2) {
     button1.classList.add("btn-info");
     button2.classList.remove("btn-info");
   }
+  setWithDrawalElement()
+}
+
+setTimeout(() => {
+  setWithDrawalElement();
+}, 100);
+
+function setWithDrawalElement() {
+  let withoutDrawalElement = document.getElementById("withoutDrawal");
+  withoutDrawalElement.innerHTML = withoutDrawal + "%";
 }
